@@ -5,3 +5,17 @@
 .hidden {
   display: none;
 }
+
+.buttons-with-no-background {
+  background: none;
+  border: none;
+  text-align: left;
+  margin-left: -5px;
+}
+
+.stats-button-profile-button {
+  background: none;
+  border: none;
+  text-align: left;
+  margin-left: -6px;
+}
