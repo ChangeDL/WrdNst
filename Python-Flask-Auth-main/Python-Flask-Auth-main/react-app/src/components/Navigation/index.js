@@ -15,6 +15,9 @@ function Navigation({ isLoaded }) {
 					<img className='logo-header' src={WrdNstLogo} />
 				</NavLink>
 			</div>
+			<div className='nav-container-middle'>
+				<h1 className='site-name-nav-bar'>WrdNst</h1>
+			</div>
 			{isLoaded && (
 				<div className='profile-button-nav'>
 					<ProfileButton user={sessionUser} />
