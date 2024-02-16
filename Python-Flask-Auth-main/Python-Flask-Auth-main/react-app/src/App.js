@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
+import './App.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -13,19 +14,33 @@ function App() {
     dispatch(authenticate()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleMode = () => {
+    setIsDarkMode(prevMode => !prevMode);
+    document.body.classList.toggle('dark-mode');
+  };
+
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route path="/login" >
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-        </Switch>
-      )}
+      <div>
+        <button onClick={toggleMode}>
+          {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        </button>
+      </div>
+      <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
+        <Navigation isLoaded={isLoaded} />
+        {isLoaded && (
+          <Switch>
+            <Route path="/login" >
+              <LoginFormPage />
+            </Route>
+            <Route path="/signup">
+              <SignupFormPage />
+            </Route>
+          </Switch>
+        )}
+      </div>
     </>
   );
 }

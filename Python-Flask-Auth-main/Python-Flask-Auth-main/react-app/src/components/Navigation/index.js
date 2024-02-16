@@ -12,7 +12,7 @@ function Navigation({ isLoaded }) {
 		<div className='main-nav-container'>
 			<div>
 				<NavLink exact to="/">
-					<img className='logo-header' src={WrdNstLogo} />
+					<img className='logo-header' src={WrdNstLogo} alt='WrdNst Logo' />
 				</NavLink>
 			</div>
 			<div className='nav-container-middle'>
