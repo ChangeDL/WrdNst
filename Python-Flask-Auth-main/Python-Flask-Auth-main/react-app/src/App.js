@@ -24,8 +24,8 @@ function App() {
   return (
     <>
       <div>
-        <button onClick={toggleMode}>
-          {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        <button onClick={toggleMode} className="theme-change-button">
+          {isDarkMode ? <i class="fa-regular fa-sun" id="sun-icon"></i> : <i class="fa-solid fa-moon"></i>}
         </button>
       </div>
       <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>

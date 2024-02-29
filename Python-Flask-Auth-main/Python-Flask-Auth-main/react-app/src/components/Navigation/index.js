@@ -10,7 +10,7 @@ function Navigation({ isLoaded }) {
 
 	return (
 		<div className='main-nav-container'>
-			<div>
+			<div className='image-containter'>
 				<NavLink exact to="/">
 					<img className='logo-header' src={WrdNstLogo} alt='WrdNst Logo' />
 				</NavLink>

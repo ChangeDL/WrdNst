@@ -7,3 +7,14 @@
     background-color: black;
     color: white;
 }
+
+.theme-change-button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#sun-icon {
+    color: yellow;
+}
