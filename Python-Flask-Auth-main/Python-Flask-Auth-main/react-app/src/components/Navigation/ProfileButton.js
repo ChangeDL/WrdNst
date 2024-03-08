@@ -5,7 +5,7 @@ import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 
-function ProfileButton({ user }) {
+function ProfileButton({ user, isDarkMode }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
@@ -39,19 +39,20 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
-      </button>
+      <button className="profile-button-tag" onClick={openMenu}>
+        {isDarkMode ? <i class="fa-solid fa-user" style={{ color: "white" }}></i> : <i class="fa-solid fa-user" ></i>
+        }
+      </button >
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
             <div>{user.username}</div>
             <div>{user.email}</div>
             <div>
-              <button className="stats-button-profile-button">Stats</button>
+              {isDarkMode ? <button className="stats-button-profile-button" style={{ color: "white" }}>Stats</button> : <button className="stats-button-profile-button">Stats</button>}
             </div>
             <div>
-              <button className="buttons-with-no-background" onClick={handleLogout}>Log Out</button>
+              {isDarkMode ? <button className="buttons-with-no-background" style={{ color: "white" }} onClick={handleLogout}>Log Out</button> : <button className="buttons-with-no-background" onClick={handleLogout}>Log Out</button>}
             </div>
           </>
         ) : (

@@ -44,6 +44,12 @@
   margin-right: 6em;
 }
 
+.profile-button-tag {
+  background: none;
+  border: none;
+  font-size: 2em;
+}
+
 .site-name-nav-bar {
   font-size: 3em;
   margin-top: .65em;

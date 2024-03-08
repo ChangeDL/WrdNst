@@ -5,7 +5,7 @@ import './Navigation.css';
 import ProfileButton from './ProfileButton';
 import WrdNstLogo from '../../assets/WrdNstLogo.png'
 
-function Navigation({ isLoaded }) {
+function Navigation({ isLoaded, isDarkMode }) {
 	const sessionUser = useSelector(state => state.session.user);
 
 	return (
@@ -20,7 +20,7 @@ function Navigation({ isLoaded }) {
 			</div>
 			{isLoaded && (
 				<div className='profile-button-nav'>
-					<ProfileButton user={sessionUser} />
+					<ProfileButton user={sessionUser} isDarkMode={isDarkMode} />
 				</div>
 			)}
 		</div>

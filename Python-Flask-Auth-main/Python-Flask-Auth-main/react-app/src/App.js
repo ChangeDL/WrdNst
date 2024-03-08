@@ -29,7 +29,7 @@ function App() {
         </button>
       </div>
       <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
-        <Navigation isLoaded={isLoaded} />
+        <Navigation isLoaded={isLoaded} isDarkMode={isDarkMode} />
         {isLoaded && (
           <Switch>
             <Route path="/login" >
